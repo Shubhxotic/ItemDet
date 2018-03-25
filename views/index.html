@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <title>MyTaskList</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+      <script src="node_modules/zone.js/dist/zone.js"></script>
+      <script src="node_modules/reflect-metadata/Reflect.js"></script>
+      <script src="node_modules/systemjs/dist/system.src.js"></script>
+      
+      
+
+      <!-- 2. Configure SystemJS -->
+      <script src="systemjs.config.js"></script>
+        <script>
+          System.import('app').catch(function(err){ console.error(err); });
+        </script>
+      </head>
+      
+      
+      <!-- 3. Display the application -->
+      <body>
+        <my-app>Loading...</my-app>
+        <p>sada</p>
+      </body>
+      </html>
+<!--       
+      
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <style>.b0b{
+          border: 1px solid black;
+        }</style>
+      </head>
+      <body>
+        <div class="container ">
+          <div class="row">
+            <div class="card rounded" style="width: 18rem;">
+              <img class="card-img-top" src="https://placebear.com/100/200" width="100px" height="150px" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="row text-center">
+                  <h6 class="float-left col-6 text-left">Item {{i}}</h6>
+                  <p class="text-info float-right pull-right text-right col-6">{{cost}}</p>
+                </div>
+                <div class="row">
+                  <p class="col-6 text-left">Qty: {{qty}}</p>
+                  <div class="col-4"></div><i class="fa fa-trash float-right"></i>
+                </div>
+              </div> 
+            </div>
+            <div class="card rounded" style="width: 18rem;">
+              <img class="card-img-top" src="https://placebear.com/100/200" width="100px;" height="150px;" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="row text-center">
+                  <h6 class="float-left col-6 text-left">Item {{i}}</h6>
+                  <p class="text-info float-right pull-right text-right col-6">{{cost}}</p>
+                </div>
+                <div class="row">
+                  <p class="col-6 text-left">Qty: {{qty}}</p>
+                  <div class="col-4"></div><i class="fa fa-trash float-right"></i>
+                </div>
+              </div> 
+            </div>
+        </div>
+      </div>
+       </body>
+      </html> -->

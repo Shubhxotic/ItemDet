@@ -54,10 +54,10 @@
             <div class="d-flex flex-row" id="blk-item{{item_no}}">
                 <div class="col-6 text-left" style="line-height: 8px;">
                     <h5>Item {{item_no}}</h5>
-                    <p class="px-2 text-secondary">Qty: {{quantity}}</p>
+                    <p class="px-2 text-secondary" id="blk-qty{{item_no}}">Qty: {{quantity}}</p>
                 </div>
                 <div class="text-right col-6   pr-2 py-auto">
-                    <p class=" text-primary my-auto prices"><i class="fa fa-inr"></i>{{price}}</p>
+                    <p class=" text-primary my-auto prices"  id="blk-pr{{item_no}}"><i class="fa fa-inr"></i>{{price}}</p>
                 </div>
             </div>
         {{/each}}
@@ -144,11 +144,17 @@
                 // alert("Price="+pr);
 
                 var temp=$("#blk-item"+String(id));
-                alert("#blk-item"+String(id));
-
+                let ids="#blk-item"+String(id);
+                let selecqty="#blk-item"+String(id)+">div>#blk-qty"+String(id);
+                // alert($(selecqty).text);
+                $(selecqty).text("Qty: "+qty);
+                let selecpr="#blk-pr"+String(id);
+                // alert(selecpr);
+                $(selecpr).html('<i class="fa fa-inr"></i>'+String(pr*qty));
+                calcTotal();
                 // alert("temp="+JSON.stringify(temp));
-                y=temp.children("div")[0];
-                alert(y.children().length);
+                // y=temp.children("div")[0];
+                // alert(y.children().length);
 
                 // alert("id="+id);
                 // alert(JSON.parse(id));

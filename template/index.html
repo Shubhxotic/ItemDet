@@ -13,13 +13,13 @@
                 <div class="card-body py-2">
                     <div class="row text-center">
                         <h6 class="float-left col-6 text-left">Item {{item_no}}</h6>
-                        <p class="text-info float-right pull-right text-right col-6"><i class="fa fa-inr"></i>  {{price}}</p>
+                        <p class="text-info float-right pull-right text-right col-6" id="price{{item_no}}"> <i class="fa fa-inr" ></i>  {{price}}</p>
                     </div>
                     <div class="row" style="line-height: 10px;">
                         <!-- <p class="col-6 text-left">Qty: {{quantity}}</p> -->
                         <div class="col-8 row  p-0 m-0 py-auto">
                             <label for="qty" class="col-4 p-0 my-auto  ">Qty: </label>
-                            <input type="number" name="qty" class="col-8  qtyInc " value="{{quantity}}"  onclick="x('{{item_no}}')">
+                            <input type="number" name="qty" class="col-8  qtyInc " value="{{quantity}}"  onclick="x('{{item_no}}')" id="quantit{{item_no}}">
                     </div>
                         <div class="col-4  float-right text-right">
                             <form action="/item/item/delete/{{_id}}" method="get" class="text-right">
@@ -51,7 +51,7 @@
         <div><h3>ITEMS:</h3></div>
         <hr>   
         {{#each items}}
-            <div class="d-flex flex-row" id="blk-item"+"{{item_no}}">
+            <div class="d-flex flex-row" id="blk-item{{item_no}}">
                 <div class="col-6 text-left" style="line-height: 8px;">
                     <h5>Item {{item_no}}</h5>
                     <p class="px-2 text-secondary">Qty: {{quantity}}</p>
@@ -113,7 +113,11 @@
         <script>
            $(document).ready(function( ){
                 $("#yolo").click();
-                var p=$(".prices");
+                calcTotal();
+           });
+
+           function calcTotal(){
+            var p=$(".prices");
                 let tot=0;
                 for (var i=0;i<p.length;i++){
                     // alert("Adding Item"+(i+1)+" with text="+p[i].textContent);
@@ -121,8 +125,7 @@
                 }
                 // alert("Total Calc= "+tot);
                 $("#total").html('<i class="fa fa-inr"></i>'+String(tot));
-           });
-
+           }
            
             function all(items){
                 alert(JSON.parse(items));
@@ -130,9 +133,26 @@
             }
 
             function x(id){
-                alert("id="+id);
-                alert(JSON.parse(id));
-                alert(Object.keys(id));
+
+                var qty=$("#quantit"+String(id)).val();
+                // alert(qty);
+                var qty=parseInt(qty);
+                // alert("Quantity="+qty);
+
+                var pr=$("#price"+String(id)).text().trim();
+                var pr=parseInt(pr);
+                // alert("Price="+pr);
+
+                var temp=$("#blk-item"+String(id));
+                alert("#blk-item"+String(id));
+
+                // alert("temp="+JSON.stringify(temp));
+                y=temp.children("div")[0];
+                alert(y.children().length);
+
+                // alert("id="+id);
+                // alert(JSON.parse(id));
+                // alert(Object.keys(id));
             }
             // $("#qtyInc").click(function(){
             //     alert($(this).attr("id"));

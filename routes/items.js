@@ -34,7 +34,8 @@ router.get('/item/delete/:id', function(req, res, next){
                 res.send(err);
             }
             // console.log(items);
-            res.render('index.html', {root: __dirname, items: items});
+            res.redirect("/");
+            // res.render('index.html', {root: __dirname, items: items});
         });
         // res.send("Successfully Deleted");
     });

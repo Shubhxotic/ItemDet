@@ -4,11 +4,11 @@
 <div class="row">
     <!-- <div class="col-1  "></div> -->
     <span id="yolo" onclick="all('{{items}}')"></span>
-    <div class="col-8 row  px-0 mr-2">
+    <div class="col-ls-8  col-md-8 col-sm-12   row px-0 mr-2 p-0">
         {{#each items}}
         <!-- <p>{{price}}</p>
             <p>{{quantity}}</p> -->
-            <div class="card my-2" style="width: 24%; height: 300px; margin-left: 0.5%;  margin-right: 0.5%; border-radius: 8px; box-shadow: 0px 8px 8px -6px  #444;">
+            <div class="card my-2 eachcard w-24" style=" height: 300px; margin-left: 0.5%;  margin-right: 0.5%; border-radius: 8px; box-shadow: 0px 8px 8px -6px  #444;">
                 <img class="card-img-top w-100  " src="{{image}}"  style="height:200px; border-top-left-radius: 8px; border-top-right-radius: 8px; " alt="Card image cap">
                 <div class="card-body py-2">
                     <div class="row text-center">
@@ -30,7 +30,7 @@
                 </div> 
             </div>
         {{/each}}
-        <div class="card my-2" style="width: 24%; height: 300px; margin-left: 0.5%;  margin-right: 0.5%; border-radius: 8px; box-shadow: 0px 8px 8px -6px  #444;">
+        <div class="card my-2 eachcard" style="width: 24%; height: 300px; margin-left: 0.5%;  margin-right: 0.5%; border-radius: 8px; box-shadow: 0px 8px 8px -6px  #444;">
             <!-- <img class="card-img-top w-100" src="{{image}}"  style="height:200px; border-top-left-radius: 8px; border-top-right-radius: 8px; " alt="Card image cap"> -->
             <!-- <div class="card-body px-auto   py-auto"> -->
                 <!-- <div class="row text-center">
@@ -46,7 +46,7 @@
             <a href="" class="my-auto mx-auto"><i class="fa fa-plus fa-2x  text-secondary"></i></a>
         </div>
     </div>
-    <div class="col-4">
+    <div class=" col-ls-4 col-md-4 col-sm-12      ">
         <div class="container card d-flex flex-column rounded p-3 pb-0 ">
         <div><h3>ITEMS:</h3></div>
         <hr>   
@@ -135,32 +135,17 @@
             function x(id){
 
                 var qty=$("#quantit"+String(id)).val();
-                // alert(qty);
                 var qty=parseInt(qty);
-                // alert("Quantity="+qty);
-
+          
                 var pr=$("#price"+String(id)).text().trim();
                 var pr=parseInt(pr);
-                // alert("Price="+pr);
-
+          
                 var temp=$("#blk-item"+String(id));
                 let ids="#blk-item"+String(id);
                 let selecqty="#blk-item"+String(id)+">div>#blk-qty"+String(id);
-                // alert($(selecqty).text);
                 $(selecqty).text("Qty: "+qty);
                 let selecpr="#blk-pr"+String(id);
-                // alert(selecpr);
                 $(selecpr).html('<i class="fa fa-inr"></i>'+String(pr*qty));
                 calcTotal();
-                // alert("temp="+JSON.stringify(temp));
-                // y=temp.children("div")[0];
-                // alert(y.children().length);
-
-                // alert("id="+id);
-                // alert(JSON.parse(id));
-                // alert(Object.keys(id));
             }
-            // $("#qtyInc").click(function(){
-            //     alert($(this).attr("id"));
-            // })
-        </script>
+           </script>
